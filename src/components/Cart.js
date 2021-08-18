@@ -3,7 +3,7 @@ const Cart = ({cartState}) => {
     return (
         cartState ?
             (<div className="cart">
-                <div className="cart-title">You're Cart</div>
+                <div className="cart-title">Your Cart</div>
                 {
                     cartState.products.map(product =>
                         <div key={product.id} className="item">
