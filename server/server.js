@@ -43,7 +43,6 @@ app.get('/api/paymentMethods', async (req, res) => {
 app.post('/api/initiatePayment', async (req, res) => {
     const currency = req.body.currency || 'USD';
     const value = +req.body.value || 0;
-    console.log({value})
     try {
         const refId = uuidv4();
         const response = await checkout.payments({
