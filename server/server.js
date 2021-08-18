@@ -4,22 +4,13 @@ const { Client, Config, CheckoutAPI } = require('@adyen/api-library');
 require('dotenv').config();
 const { v4: uuidv4 } = require('uuid');
 const cors = require('cors')
-const ENV = process.env.PROD;
 
 // Server config
 const app = express();
 const port = 3001;
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const corsOptions = {
-    origin: process.env.ALLOW_ORIGIN
-  }
 
 // Adyen config
 const config = new Config();
@@ -30,7 +21,7 @@ client.setEnvironment("TEST");
 const checkout = new CheckoutAPI(client);
 
 // Routes
-app.get('/api/paymentMethods', cors(corsOptions), async (req, res) => {
+app.get('/api/paymentMethods', async (req, res) => {
     try {
         const response = await checkout.paymentMethods({
             channel: 'Web',
@@ -42,7 +33,7 @@ app.get('/api/paymentMethods', cors(corsOptions), async (req, res) => {
     }
 });
 
-app.post('/api/initiatePayment', cors(corsOptions), async (req, res) => {
+app.post('/api/initiatePayment', async (req, res) => {
     try {
         const refId = uuidv4();
         const response = await checkout.payments({
@@ -67,7 +58,7 @@ app.post('/api/initiatePayment', cors(corsOptions), async (req, res) => {
     }
 });
 
-app.post('/api/additionalDetails', cors(corsOptions), async (req, res) => {
+app.post('/api/additionalDetails', async (req, res) => {
     const payload = {
         details: req.body.details,
         paymentData: req.body.paymentData
