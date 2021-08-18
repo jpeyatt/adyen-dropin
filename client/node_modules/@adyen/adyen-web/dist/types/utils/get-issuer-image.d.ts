@@ -1,0 +1,2 @@
+declare const getIssuerImageUrl: (options: object, type: string) => (issuer: string) => string;
+export default getIssuerImageUrl;

@@ -1,0 +1,2 @@
+declare const convertFullToHalf: (str: any) => any;
+export { convertFullToHalf };

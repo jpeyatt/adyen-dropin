@@ -1,0 +1,3 @@
+import { h } from 'preact';
+import { StoredCardFieldsProps } from './types';
+export default function StoredCardFields({ brand, hasCVC, onFocusField, errors, valid, ...props }: StoredCardFieldsProps): h.JSX.Element;

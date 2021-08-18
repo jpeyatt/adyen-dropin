@@ -1,0 +1,15 @@
+/**
+ * Checks validity of an IBAN
+ * @param iban -
+ */
+export declare const isValidIBAN: (iban: any) => boolean;
+/**
+ * Checkss the validity status of an IBAN
+ * @param iban -
+ */
+export declare const checkIbanStatus: (iban: any) => any;
+/**
+ * Checks validity of a holder name
+ * @param holder -
+ */
+export declare const isValidHolder: (holder: any) => boolean;

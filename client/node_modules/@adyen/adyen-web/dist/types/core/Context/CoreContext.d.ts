@@ -1,0 +1,5 @@
+import Language from '../../language/Language';
+export declare const CoreContext: import("preact").Context<{
+    i18n: Language;
+    loadingContext: string;
+}>;

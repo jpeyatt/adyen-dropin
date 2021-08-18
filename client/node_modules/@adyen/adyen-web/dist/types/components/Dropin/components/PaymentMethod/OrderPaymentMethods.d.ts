@@ -1,0 +1,8 @@
+import { h } from 'preact';
+import './OrderPaymentMethods.scss';
+export declare const OrderPaymentMethods: ({ order, orderStatus, onOrderCancel }: {
+    order: any;
+    orderStatus: any;
+    onOrderCancel: any;
+}) => h.JSX.Element;
+export default OrderPaymentMethods;

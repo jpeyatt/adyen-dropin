@@ -1,0 +1,3 @@
+import { h } from 'preact';
+import { PayPalButtonsProps } from '../types';
+export default function PaypalButtons(props: PayPalButtonsProps): h.JSX.Element;

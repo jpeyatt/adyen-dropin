@@ -1,0 +1,6 @@
+export default function createIframe({ src, title, policy, styleStr }: {
+    src: any;
+    title?: string;
+    policy?: string;
+    styleStr?: string;
+}): HTMLIFrameElement;

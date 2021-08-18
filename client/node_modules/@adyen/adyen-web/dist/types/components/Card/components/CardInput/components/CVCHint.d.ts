@@ -1,0 +1,3 @@
+import { h } from 'preact';
+import { CVCHintProps } from './types';
+export default function CVCHint({ frontCVC }: CVCHintProps): h.JSX.Element;

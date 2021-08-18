@@ -1,0 +1,8 @@
+/**
+ * Email regex
+ */
+export declare const email: RegExp;
+/**
+ * Telephone number regex
+ */
+export declare const telephoneNumber: RegExp;

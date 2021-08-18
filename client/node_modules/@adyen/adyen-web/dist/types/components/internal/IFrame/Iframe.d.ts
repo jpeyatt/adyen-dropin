@@ -1,0 +1,41 @@
+import { Component, h } from 'preact';
+interface IframeProps {
+    width?: string;
+    height?: string;
+    minWidth?: string;
+    minHeight?: string;
+    border?: string;
+    src?: string;
+    allow?: string;
+    name?: string;
+    title?: string;
+    callback?: (contentWindow: any) => void;
+}
+declare class Iframe extends Component<IframeProps> {
+    static defaultProps: {
+        width: string;
+        height: string;
+        minWidth: string;
+        minHeight: string;
+        border: string;
+        src: any;
+        allow: any;
+        title: string;
+    };
+    private iframeEl;
+    iframeOnLoad(): void;
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    render({ name, src, width, height, minWidth, minHeight, border, allow, title }: {
+        name: any;
+        src: any;
+        width: any;
+        height: any;
+        minWidth: any;
+        minHeight: any;
+        border: any;
+        allow: any;
+        title: any;
+    }): h.JSX.Element;
+}
+export default Iframe;

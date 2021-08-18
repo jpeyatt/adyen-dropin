@@ -1,0 +1,9 @@
+import { PaymentMethod } from '../../../types';
+declare class PaymentMethodsResponse {
+    paymentMethods: PaymentMethod[];
+    storedPaymentMethods: PaymentMethod[];
+    constructor(response: any, options?: {});
+    has(paymentMethod: string): boolean;
+    find(paymentMethod: string): PaymentMethod;
+}
+export default PaymentMethodsResponse;

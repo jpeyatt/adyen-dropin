@@ -1,0 +1,6 @@
+import { h } from 'preact';
+interface InputDateProps {
+    onInput: (e: any) => void;
+}
+export default function InputDate(props: InputDateProps): h.JSX.Element;
+export {};

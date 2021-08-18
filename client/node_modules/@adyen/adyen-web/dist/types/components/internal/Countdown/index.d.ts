@@ -1,0 +1,30 @@
+import { Component, h } from 'preact';
+interface CountdownProps {
+    minutesFromNow: number;
+    onTick?: (time: any) => void;
+    onCompleted?: () => void;
+}
+interface CountdownState {
+    startTime: Date;
+    endTime: Date;
+    minutes: string;
+    seconds: string;
+}
+declare class Countdown extends Component<CountdownProps, CountdownState> {
+    constructor(props: any);
+    static defaultProps: {
+        onTick: () => void;
+        onCompleted: () => void;
+    };
+    protected interval: any;
+    tick(): void | {
+        minutes: any;
+        seconds: any;
+        percentage: number;
+    };
+    clearInterval(): void;
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    render(): h.JSX.Element;
+}
+export default Countdown;

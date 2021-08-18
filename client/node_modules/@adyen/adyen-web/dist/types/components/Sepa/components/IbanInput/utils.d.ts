@@ -1,0 +1,13 @@
+/**
+ *  @param countryCode -
+ *  @returns Example of IBAN Number
+ */
+export declare const getIbanPlaceHolder: (countryCode?: any) => any;
+export declare const getIbanCountrySpecification: (countryCode: any) => any;
+/**
+ *  @param cursor -
+ *  @param iban -
+ *  @param previousIban -
+ *  @returns new cursor position
+ */
+export declare const getNextCursorPosition: (cursor: any, iban: any, previousIban: any) => any;

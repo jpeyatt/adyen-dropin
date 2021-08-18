@@ -1,0 +1,10 @@
+export declare const getFormattedData: (data: any) => {
+    telephoneNumber: any;
+    shopperEmail: any;
+    dateOfBirth: string;
+    shopperName: {
+        gender: any;
+        lastName: any;
+        firstName: any;
+    };
+};

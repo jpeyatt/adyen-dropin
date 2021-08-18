@@ -1,0 +1,5 @@
+declare function useCoreContext(): {
+    i18n: import("../../language").default;
+    loadingContext: string;
+};
+export default useCoreContext;

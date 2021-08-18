@@ -1,0 +1,7 @@
+import locales from './locales';
+export declare type Locales = keyof typeof locales;
+export declare type CustomTranslations = {
+    [key: string]: {
+        [message: string]: string;
+    };
+};

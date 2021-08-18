@@ -1,0 +1,45 @@
+import UIElement from '../components/UIElement';
+import { PaymentAction } from '../types';
+import { CoreOptions } from './types';
+import { PaymentMethods, PaymentMethodOptions } from '../types';
+declare class Core {
+    private paymentMethodsResponse;
+    modules: any;
+    options: CoreOptions;
+    components: any[];
+    static readonly version: {
+        version: string;
+        revision: string;
+        branch: string;
+        buildId: string;
+    };
+    constructor(options: CoreOptions);
+    /**
+     * Instantiates a new UIElement component ready to be mounted
+     * @param paymentMethod - name or class of the paymentMethod
+     * @param options - options that will be merged to the global Checkout props
+     * @returns new UIElement
+     */
+    create<T extends keyof PaymentMethods>(paymentMethod: T | string, options?: PaymentMethodOptions<T>): InstanceType<PaymentMethods[T]>;
+    create<T extends new (...args: any) => T, P extends ConstructorParameters<T>>(paymentMethod: T, options?: P[0]): T;
+    /**
+     * Instantiates a new element component ready to be mounted from an action object
+     * @param action - action defining the component with the component data
+     * @param options - options that will be merged to the global Checkout props
+     * @returns new UIElement
+     */
+    createFromAction(action: PaymentAction, options?: {}): UIElement;
+    /**
+     * Updates global configurations, resets the internal state and remounts each element.
+     * @param options - props to update
+     * @returns this - the element instance
+     */
+    update: (options?: CoreOptions) => this;
+    /**
+     * Remove the reference of a component
+     * @param component - reference to the component to be removed
+     * @returns this - the element instance
+     */
+    remove: (component: any) => this;
+}
+export default Core;

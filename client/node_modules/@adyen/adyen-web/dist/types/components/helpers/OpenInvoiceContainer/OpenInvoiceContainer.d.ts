@@ -1,0 +1,32 @@
+import { h } from 'preact';
+import UIElement from '../../UIElement';
+export default class OpenInvoiceContainer extends UIElement {
+    protected static defaultProps: {
+        onChange: () => void;
+        data: {
+            companyDetails: {};
+            personalDetails: {};
+            billingAddress: {};
+            deliveryAddress: {};
+        };
+        visibility: {
+            companyDetails: string;
+            personalDetails: string;
+            billingAddress: string;
+            deliveryAddress: string;
+        };
+    };
+    /**
+     * Returns whether the component state is valid or not
+     */
+    get isValid(): boolean;
+    /**
+     * Formats props on construction time
+     */
+    formatProps(props: any): any;
+    /**
+     * Formats the component data output
+     */
+    formatData(): any;
+    render(): h.JSX.Element;
+}

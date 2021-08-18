@@ -1,0 +1,17 @@
+/**
+ * @internal
+ * Utility class for logging messages/errors
+ * Usage:
+ * logger.log('Log message, always visible');
+ *
+ * For debug only messages:
+ * window._b$dl && logger.log('Log message only visible on dev env');
+ *
+ * Or just use a conditional:
+ * ```
+ * if (window._b$dl) {
+ *     logger.log('Log message only visible on dev env');
+ * }
+ * ```
+ */
+export {};

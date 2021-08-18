@@ -1,0 +1,22 @@
+/**
+ * Creates a script element from a certain source in the passed node selector.
+ * If no selector is passed it will add the script element in the body.
+ *
+ * @example
+ * ```
+ * const script = new Script('https://example.com/script.js', '.container');
+ * script.load().then(doSomething);
+ *
+ * // To clean up just call the remove method
+ * script.remove();
+ * ```
+ */
+declare class Script {
+    private readonly script;
+    private readonly src;
+    private readonly node;
+    constructor(src: any, node?: string);
+    load: () => Promise<any>;
+    remove: () => void;
+}
+export default Script;

@@ -1,0 +1,9 @@
+import { h } from 'preact';
+declare function InputBase(props: any): h.JSX.Element;
+declare namespace InputBase {
+    var defaultProps: {
+        type: string;
+        classNameModifiers: any[];
+    };
+}
+export default InputBase;

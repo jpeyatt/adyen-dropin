@@ -1,0 +1,18 @@
+import { Component, h } from 'preact';
+interface CoreProviderProps {
+    loadingContext: string;
+    i18n: any;
+    children?: any;
+}
+/**
+ * CoreProvider Component
+ * Wraps a component delaying the render until after the i18n module is fully loaded
+ */
+declare class CoreProvider extends Component<CoreProviderProps> {
+    state: {
+        loaded: boolean;
+    };
+    componentDidMount(): void;
+    render({ children }: CoreProviderProps): h.JSX.Element;
+}
+export default CoreProvider;

@@ -1,0 +1,5 @@
+import IssuerListContainer from '../helpers/IssuerListContainer';
+declare class OpenBankingUKElement extends IssuerListContainer {
+    static type: string;
+}
+export default OpenBankingUKElement;

@@ -1,0 +1,11 @@
+/**
+ * Centralised window.postMessage processing function used in 3DS2 components
+ *
+ * @param domain - expected domain for the postMesssage to have originated from
+ * @param resolve - the resolve function from the Promise that called this function
+ * @param reject - the reject function from the Promise that called this function
+ * @param rejectObj - an object to reject the promise with if origins don't match
+ * @param expectedType - string to check that the passed data has the expected type
+ */
+declare const getProcessMessageHandler: (domain: string, resolve: Function, reject: Function, rejectObj: object, expectedType: string) => Function;
+export default getProcessMessageHandler;

@@ -1,0 +1,3 @@
+export declare const FALLBACK_CONTEXT = "https://checkoutshopper-live.adyen.com/checkoutshopper/";
+declare const resolveEnvironment: (env?: string) => string;
+export default resolveEnvironment;

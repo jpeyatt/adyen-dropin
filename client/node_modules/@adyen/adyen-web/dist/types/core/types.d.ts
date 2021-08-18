@@ -1,0 +1,59 @@
+import { CustomTranslations, Locales } from '../language/types';
+import { PaymentAmount, PaymentMethods, PaymentMethodOptions, PaymentActionsType } from '../types';
+import { AnalyticsOptions } from './Analytics/types';
+import { PaymentMethodsResponseObject } from './ProcessResponse/PaymentMethodsResponse/types';
+import { RiskModuleOptions } from './RiskModule/RiskModule';
+export interface CoreOptions {
+    /**
+     * Use test. When you're ready to accept live payments, change the value to one of our {@link https://docs.adyen.com/checkout/drop-in-web#testing-your-integration | live environments}.
+     */
+    environment?: 'test' | 'live' | 'live-us' | 'live-au' | string;
+    /**
+     * A public key linked to your web service user, used for {@link https://docs.adyen.com/user-management/client-side-authentication | client-side authentication}.
+     */
+    clientKey?: string;
+    /**
+     * The shopper's locale. This is used to set the language rendered in the UI.
+     * For a list of supported locales, see {@link https://docs.adyen.com/checkout/components-web/localization-components | Localization}.
+     * For adding a custom locale, see {@link https://docs.adyen.com/checkout/components-web/localization-components#create-localization | Create localization}.
+     * @defaultValue 'en-US'
+     */
+    locale?: Locales | string;
+    /**
+     * Custom translations and localizations
+     * See {@link https://docs.adyen.com/checkout/components-web/localization-components | Localizing Components}
+     */
+    translations?: CustomTranslations;
+    /**
+     * The full `/paymentMethods` response
+     */
+    paymentMethodsResponse?: PaymentMethodsResponseObject;
+    /**
+     * Amount of the payment
+     */
+    amount?: PaymentAmount;
+    /**
+     * The shopper's country code. A valid value is an ISO two-character country code (e.g. 'NL').
+     */
+    countryCode?: string;
+    /**
+     * Optional per payment method configuration
+     */
+    paymentMethodsConfiguration?: PaymentMethodsConfiguration;
+    /**
+     * Display only these payment methods
+     */
+    allowPaymentMethods?: string[];
+    /**
+     * Never display these payment methods
+     */
+    removePaymentMethods?: string[];
+    analytics?: AnalyticsOptions;
+    risk?: RiskModuleOptions;
+    [key: string]: any;
+}
+export declare type PaymentMethodsConfiguration = {
+    [key in keyof PaymentMethods]?: Partial<PaymentMethodOptions<key>>;
+} | {
+    [key in PaymentActionsType]?: any;
+};

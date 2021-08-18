@@ -1,0 +1,15 @@
+import { Component, h } from 'preact';
+import { PrepareChallenge3DS2Props, PrepareChallenge3DS2State } from './types';
+import '../../ThreeDS2.scss';
+declare class PrepareChallenge3DS2 extends Component<PrepareChallenge3DS2Props, PrepareChallenge3DS2State> {
+    static defaultProps: {
+        onComplete: () => void;
+        onError: () => void;
+    };
+    constructor(props: any);
+    setStatusComplete(resultObj: any): void;
+    render(props: any, { challengeData }: {
+        challengeData: any;
+    }): h.JSX.Element;
+}
+export default PrepareChallenge3DS2;

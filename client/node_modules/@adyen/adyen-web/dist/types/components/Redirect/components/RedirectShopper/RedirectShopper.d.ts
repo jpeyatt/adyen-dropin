@@ -1,0 +1,22 @@
+import { Component, h } from 'preact';
+interface RedirectShopperProps {
+    beforeRedirect: (resolve: any, reject: any, url: any) => Promise<any>;
+    url: string;
+    method: 'GET' | 'POST';
+    data?: any;
+}
+declare class RedirectShopper extends Component<RedirectShopperProps> {
+    static defaultProps: {
+        beforeRedirect: (resolve: any) => any;
+        method: string;
+        data: {};
+    };
+    private postForm;
+    componentDidMount(): void;
+    render({ url, method, data }: {
+        url: any;
+        method: any;
+        data?: {};
+    }): h.JSX.Element;
+}
+export default RedirectShopper;

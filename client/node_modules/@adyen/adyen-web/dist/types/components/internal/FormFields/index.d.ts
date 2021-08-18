@@ -1,0 +1,4 @@
+import { h } from 'preact';
+import './FormFields.scss';
+export declare const renderFormField: (type: any, props: any) => h.JSX.Element;
+export default renderFormField;

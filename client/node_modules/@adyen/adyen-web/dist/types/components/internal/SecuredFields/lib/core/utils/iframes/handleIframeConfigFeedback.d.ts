@@ -1,0 +1,1 @@
+export declare function handleIframeConfigFeedback(pFeedbackObj: any): boolean;

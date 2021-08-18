@@ -1,0 +1,18 @@
+import { h } from 'preact';
+import { AwaitComponentProps } from './types';
+import './Await.scss';
+declare function Await(props: AwaitComponentProps): h.JSX.Element;
+declare namespace Await {
+    var defaultProps: {
+        countdownTime: number;
+        onError: () => void;
+        onComplete: () => void;
+        throttleTime: number;
+        throttleInterval: number;
+        showCountdownTimer: boolean;
+        classNameModifiers: any[];
+        shouldRedirectOnMobile: boolean;
+        url: any;
+    };
+}
+export default Await;

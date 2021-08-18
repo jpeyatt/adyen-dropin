@@ -1,0 +1,20 @@
+import OpenInvoiceContainer from '../helpers/OpenInvoiceContainer';
+export default class AfterPayB2B extends OpenInvoiceContainer {
+    static type: string;
+    protected static defaultProps: {
+        onChange: () => void;
+        data: {
+            companyDetails: {};
+            personalDetails: {};
+            billingAddress: {};
+            deliveryAddress: {};
+        };
+        visibility: {
+            companyDetails: string;
+            personalDetails: string;
+            billingAddress: string;
+            deliveryAddress: string;
+        };
+    };
+    formatProps(props: any): any;
+}

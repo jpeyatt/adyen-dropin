@@ -1,0 +1,2 @@
+import { SFFeedbackObj } from '../../types';
+export declare function handleBinValue(pFeedbackObj: SFFeedbackObj): void;

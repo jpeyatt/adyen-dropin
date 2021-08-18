@@ -1,0 +1,30 @@
+import { Component, h } from 'preact';
+import UIElement from '../../../UIElement';
+import { Order, OrderStatus } from '../../../../types';
+interface PaymentMethodListProps {
+    paymentMethods: UIElement[];
+    activePaymentMethod: UIElement;
+    cachedPaymentMethods: object;
+    order?: Order;
+    orderStatus: OrderStatus;
+    openFirstStoredPaymentMethod?: boolean;
+    openFirstPaymentMethod?: boolean;
+    showRemovePaymentMethodButton?: boolean;
+    onSelect: (paymentMethod: any) => void;
+    onDisableStoredPaymentMethod: (storedPaymentMethod: any) => void;
+    onOrderCancel?: (order: any) => void;
+    isDisabling: boolean;
+    isLoading: boolean;
+}
+declare class PaymentMethodList extends Component<PaymentMethodListProps> {
+    static defaultProps: PaymentMethodListProps;
+    componentDidMount(): void;
+    onSelect: (paymentMethod: any) => () => void;
+    render({ paymentMethods, activePaymentMethod, cachedPaymentMethods, isLoading }: {
+        paymentMethods: any;
+        activePaymentMethod: any;
+        cachedPaymentMethods: any;
+        isLoading: any;
+    }): h.JSX.Element;
+}
+export default PaymentMethodList;

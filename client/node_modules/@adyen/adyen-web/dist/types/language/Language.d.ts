@@ -1,0 +1,30 @@
+export declare class Language {
+    constructor(locale?: string, customTranslations?: object);
+    readonly locale: string;
+    readonly languageCode: string;
+    private readonly supportedLocales;
+    translations: object;
+    readonly customTranslations: any;
+    loaded: Promise<any>;
+    /**
+     * Returns a translated string from a key in the current {@link Language.locale}
+     * @param key - Translation key
+     * @param options - Translation options
+     * @returns Translated string
+     */
+    get(key: string, options?: any): string;
+    /**
+     * Returns a localized string for an amount
+     * @param amount - Amount to be converted
+     * @param currencyCode - Currency code of the amount
+     * @param options - Options for String.prototype.toLocaleString
+     */
+    amount(amount: number, currencyCode: string, options?: object): string;
+    /**
+     * Returns a localized string for a date
+     * @param date - Date to be localized
+     * @param options - Options for {@link Date.toLocaleDateString}
+     */
+    date(date: string, options?: object): string;
+}
+export default Language;

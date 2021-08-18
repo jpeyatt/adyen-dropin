@@ -1,0 +1,9 @@
+declare function touchendListener(e: Event): void;
+declare function handleAdditionalFields(): void;
+declare function destroyTouchendListener(): void;
+declare const _default: {
+    touchendListener: typeof touchendListener;
+    handleAdditionalFields: typeof handleAdditionalFields;
+    destroyTouchendListener: typeof destroyTouchendListener;
+};
+export default _default;

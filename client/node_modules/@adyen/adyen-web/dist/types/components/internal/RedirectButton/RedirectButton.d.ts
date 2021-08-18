@@ -1,0 +1,9 @@
+import { h } from 'preact';
+declare function RedirectButton({ payButton, onSubmit, amount, name, ...props }: {
+    [x: string]: any;
+    payButton: any;
+    onSubmit: any;
+    amount?: any;
+    name: any;
+}): h.JSX.Element;
+export default RedirectButton;

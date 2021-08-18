@@ -1,0 +1,2 @@
+export declare function resolveSupportedVersion(latestVersion: any): any;
+export declare function mapBrands(brands: any): any;

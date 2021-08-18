@@ -1,0 +1,19 @@
+{
+  "name": "adyen-dropin-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix client && npm run build --prefix client"
+  },
+  "dependencies": {
+    "@adyen/api-library": "^9.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

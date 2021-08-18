@@ -1,0 +1,39 @@
+/**
+ * Matches a string with one of the locales
+ * @param locale -
+ * @param supportedLocales -
+
+ * @example
+ * matchLocale('en-GB');
+ * // 'en-US'
+ */
+export declare function matchLocale(locale: string, supportedLocales: any): string;
+/**
+ * Returns a locale with the proper format
+ * @param localeParam -
+ *
+ * @example
+ * formatLocale('En_us');
+ * // 'en-US'
+ */
+export declare function formatLocale(localeParam: string): string;
+/**
+ * Checks the locale format.
+ * Also checks if it's on the locales array.
+ * If it is not, tries to match it with one.
+ * @param locale -
+ * @param supportedLocales -
+ */
+export declare function parseLocale(locale: string, supportedLocales?: string[]): string;
+/**
+ * Formats the locales inside the customTranslations object against the supportedLocales
+ * @param customTranslations -
+ * @param supportedLocales -
+ */
+export declare function formatCustomTranslations(customTranslations: object, supportedLocales: string[]): object;
+/**
+ * Returns an array with all the locales
+ * @param locale - The locale the user wants to use
+ * @param customTranslations -
+ */
+export declare const loadTranslations: (locale: string, customTranslations?: object) => Promise<any>;

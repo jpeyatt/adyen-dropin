@@ -1,0 +1,3 @@
+import './polyfills';
+import Checkout from './core';
+export default Checkout;

@@ -1,0 +1,18 @@
+import { h } from 'preact';
+import UIElement from '../UIElement';
+export declare class OxxoElement extends UIElement {
+    static type: string;
+    get isValid(): boolean;
+    formatProps(props: any): any;
+    /**
+     * Formats the component data output
+     */
+    formatData(): {
+        paymentMethod: {
+            type: any;
+        };
+    };
+    private handleRef;
+    render(): h.JSX.Element;
+}
+export default OxxoElement;

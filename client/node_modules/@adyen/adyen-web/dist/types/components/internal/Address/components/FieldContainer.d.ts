@@ -1,0 +1,4 @@
+import { h } from 'preact';
+import { FieldContainerProps } from '../types';
+declare function FieldContainer(props: FieldContainerProps): h.JSX.Element;
+export default FieldContainer;

@@ -1,0 +1,19 @@
+import { h } from 'preact';
+import UIElement from '../UIElement';
+export declare class AchElement extends UIElement {
+    static type: string;
+    formatProps(props: any): any;
+    /**
+     * Formats the component data output
+     */
+    formatData(): {
+        billingAddress: any;
+        paymentMethod: any;
+    };
+    updateStyles(stylesObj: any): this;
+    setFocusOn(fieldName: any): this;
+    get isValid(): boolean;
+    get displayName(): any;
+    render(): h.JSX.Element;
+}
+export default AchElement;

@@ -1,0 +1,6 @@
+declare const select: (root: any, selector: any) => any[];
+declare const selectOne: (root: any, selector: any) => any;
+declare const getAttribute: (node: any, attribute: any) => any;
+declare const on: (node: any, event: any, callback: any, useCapture?: any) => void;
+declare const off: (node: any, event: any, callback: any, useCapture?: any) => void;
+export { getAttribute, on, off, select, selectOne, removeAllChildren };

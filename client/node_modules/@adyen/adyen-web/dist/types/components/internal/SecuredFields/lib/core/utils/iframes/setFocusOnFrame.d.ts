@@ -1,0 +1,1 @@
+export declare function setFocusOnFrame(pFieldType: string, doLog?: boolean): void;

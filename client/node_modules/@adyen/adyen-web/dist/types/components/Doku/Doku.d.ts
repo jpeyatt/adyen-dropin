@@ -1,0 +1,13 @@
+import { h } from 'preact';
+import UIElement from '../UIElement';
+export declare class DokuElement extends UIElement {
+    static type: string;
+    get isValid(): boolean;
+    /**
+     * Formats the component data output
+     */
+    formatData(): any;
+    get icon(): any;
+    render(): h.JSX.Element;
+}
+export default DokuElement;

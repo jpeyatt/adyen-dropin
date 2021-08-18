@@ -1,0 +1,7 @@
+import { h } from 'preact';
+interface IconProps {
+    type: string;
+    className?: string;
+}
+declare const Icon: ({ type, className }: IconProps) => h.JSX.Element;
+export default Icon;

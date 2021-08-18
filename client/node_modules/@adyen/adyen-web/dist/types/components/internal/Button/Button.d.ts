@@ -1,0 +1,29 @@
+import { Component, h } from 'preact';
+import './Button.scss';
+import { ButtonProps, ButtonState } from './types';
+declare class Button extends Component<ButtonProps, ButtonState> {
+    static defaultProps: {
+        status: string;
+        disabled: boolean;
+        label: string;
+        secondary: boolean;
+        inline: boolean;
+        target: string;
+        onClick: () => void;
+    };
+    onClick: (e: any) => void;
+    complete: (delay?: number) => void;
+    render({ classNameModifiers, disabled, href, icon, secondary, inline, label, status }: {
+        classNameModifiers?: any[];
+        disabled: any;
+        href: any;
+        icon: any;
+        secondary: any;
+        inline: any;
+        label: any;
+        status: any;
+    }, { completed }: {
+        completed: any;
+    }): h.JSX.Element;
+}
+export default Button;

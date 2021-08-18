@@ -1,0 +1,15 @@
+import { h } from 'preact';
+import UIElement from '../UIElement';
+interface BlikElementData {
+    paymentMethod: {
+        type: string;
+        blikCode: string;
+    };
+}
+declare class BlikElement extends UIElement {
+    static type: string;
+    formatData(): BlikElementData;
+    get isValid(): boolean;
+    render(): h.JSX.Element;
+}
+export default BlikElement;

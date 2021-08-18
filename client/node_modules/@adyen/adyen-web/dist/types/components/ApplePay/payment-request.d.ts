@@ -1,0 +1,8 @@
+/// <reference types="applepayjs" />
+export declare const preparePaymentRequest: ({ countryCode, companyName, amount, ...props }: {
+    [x: string]: any;
+    countryCode: any;
+    companyName: any;
+    amount: any;
+}) => ApplePayJS.ApplePayPaymentRequest;
+export default preparePaymentRequest;

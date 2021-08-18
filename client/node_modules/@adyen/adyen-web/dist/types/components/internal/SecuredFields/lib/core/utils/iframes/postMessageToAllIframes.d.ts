@@ -1,0 +1,1 @@
+export declare function postMessageToAllIframes(pDataObj: object): void;

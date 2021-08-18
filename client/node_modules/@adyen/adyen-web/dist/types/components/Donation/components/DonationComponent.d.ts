@@ -1,0 +1,13 @@
+import { h } from 'preact';
+import '../Donation.scss';
+declare function DonationComponent(props: any): h.JSX.Element;
+declare namespace DonationComponent {
+    var defaultProps: {
+        onCancel: () => void;
+        onChange: () => void;
+        onDonate: () => void;
+        amounts: {};
+        showCancelButton: boolean;
+    };
+}
+export default DonationComponent;

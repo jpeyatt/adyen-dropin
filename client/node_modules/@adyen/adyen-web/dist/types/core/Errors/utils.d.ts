@@ -1,0 +1,15 @@
+/**
+ * Access items stored in the ERROR_CODES object by either sending in the key - in which case you get the value
+ * or by sending in the value - in which case you get the key
+ * @param keyOrValue - key (or value) by which to retrieve the corresponding value (or key)
+ */
+export declare const getError: (keyOrValue: string) => string;
+export declare const addAriaErrorTranslationsObject: (i18n: any) => {};
+/**
+ * Adds a new error property to an object, unless it already exists.
+ * This error property is an object containing the translated errors, stored by code, that relate to the securedFields
+ * @param originalObject - object we want to duplicate and enhance
+ * @param i18n - an i18n object to use to get translations
+ * @returns a duplicate of the original object with a new property: "error" whose value is a object containing the translated errors
+ */
+export declare const addErrorTranslationsToObject: (originalObj: any, i18n: any) => any;

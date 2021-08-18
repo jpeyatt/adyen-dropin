@@ -1,0 +1,10 @@
+import { PaymentMethod, StoredPaymentMethod } from '../../../types';
+export declare const processPaymentMethods: (paymentMethods: PaymentMethod[], { allowPaymentMethods, removePaymentMethods }: {
+    allowPaymentMethods?: any[];
+    removePaymentMethods?: any[];
+}) => PaymentMethod[];
+export declare const processStoredPaymentMethods: (storedPaymentMethods: StoredPaymentMethod[], { allowPaymentMethods, removePaymentMethods }: {
+    allowPaymentMethods?: any[];
+    removePaymentMethods?: any[];
+}) => PaymentMethod[];
+export declare const checkPaymentMethodsResponse: (response: any) => void;

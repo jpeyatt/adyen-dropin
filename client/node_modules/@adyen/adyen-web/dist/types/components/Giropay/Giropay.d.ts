@@ -1,0 +1,17 @@
+import { h } from 'preact';
+import RedirectElement from '../Redirect';
+declare class GiropayElement extends RedirectElement {
+    static type: string;
+    formatProps(props: any): any;
+    /**
+     * Formats the component data output
+     */
+    formatData(): {
+        paymentMethod: {
+            type: string;
+        };
+    };
+    get displayName(): any;
+    render(): h.JSX.Element;
+}
+export default GiropayElement;
