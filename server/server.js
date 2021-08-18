@@ -13,13 +13,12 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-if (process.env.NODE_ENV === 'production') {
-    // set static folder
-    app.use(express.static('/build'));
-    app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-    });
-}
+// set static folder
+app.use(express.static('../build'));
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
+
 
 // Adyen config
 const config = new Config();
