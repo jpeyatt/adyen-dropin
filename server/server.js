@@ -4,6 +4,8 @@ const { Client, Config, CheckoutAPI } = require('@adyen/api-library');
 require('dotenv').config();
 const { v4: uuidv4 } = require('uuid');
 const cors = require('cors')
+const path = require('path');
+
 
 // Server config
 const app = express();
@@ -11,6 +13,13 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+if (process.env.NODE_ENV === 'production') {
+    // set static folder
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 // Adyen config
 const config = new Config();
@@ -65,7 +74,7 @@ app.post('/api/additionalDetails', async (req, res) => {
     };
     try {
         const response = await checkout.paymentsDetails(payload);
-        res.send(JSON.stringify({action: response.action || null, resultCode: response.resultCode}));
+        res.send(JSON.stringify({ action: response.action || null, resultCode: response.resultCode }));
     } catch (error) {
         console.error(error);
     }
