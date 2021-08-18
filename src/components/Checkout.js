@@ -81,7 +81,8 @@ const Checkout = ({ onPaymentResponse }) => {
                     })
                     .mount(dropinRef.current);
             });
-    }, [onAdditionalDetails, onSubmit]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div>
