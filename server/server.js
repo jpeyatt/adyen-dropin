@@ -4,13 +4,14 @@ const { Client, Config, CheckoutAPI } = require('@adyen/api-library');
 require('dotenv').config();
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
-
+const cors = require('cors');
 
 // Server config
 const app = express();
 const port = 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 // set static folder
 app.use(express.static('../build'));
 app.get('/', (req, res) => {
@@ -40,12 +41,14 @@ app.get('/api/paymentMethods', async (req, res) => {
 });
 
 app.post('/api/initiatePayment', async (req, res) => {
+    const currency = req.body.currency || 'USD';
+    const value = req.body.value || 0;
     try {
         const refId = uuidv4();
         const response = await checkout.payments({
             reference: refId,
             merchantAccount: config.merchantAccount,
-            amount: { currency: 'USD', value: 2799.99 },
+            amount: { currency, value },
             channel: 'Web',
             browserInfo: req.body.browserInfo,
             returnUrl: '/',
@@ -66,7 +69,6 @@ app.post('/api/initiatePayment', async (req, res) => {
 
 app.post('/api/additionalDetails', async (req, res) => {
     const payload = {
-        details: req.body.details,
         paymentData: req.body.paymentData
     };
     try {

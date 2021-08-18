@@ -5,8 +5,6 @@ import Checkout from './components/Checkout';
 import Pending from './components/Pending';
 import Success from './components/Success';
 import Error from './components/Error';
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,7 +19,6 @@ function App() {
   }
 
   useEffect(() => {
-
   }, [paymentResponse]);
 
   return (
@@ -49,7 +46,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;
