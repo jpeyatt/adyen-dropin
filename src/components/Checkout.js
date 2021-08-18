@@ -81,7 +81,7 @@ const Checkout = ({ onPaymentResponse }) => {
                     })
                     .mount(dropinRef.current);
             });
-    }, []);
+    }, [onAdditionalDetails, onSubmit]);
 
     return (
         <div>
