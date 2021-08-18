@@ -17,7 +17,7 @@ const Checkout = ({ onPaymentResponse }) => {
     const [paymentResponse, setPaymentResponse] = useState(null);
 
     const onSubmit = (state, dropin) => {
-        makePayment(state.data, cart.currency, 2799)
+        makePayment(state.data, cart.currency, cart.total)
             .then(response => {
                 if (response.action) {
                     dropin.handleAction(response.action);
